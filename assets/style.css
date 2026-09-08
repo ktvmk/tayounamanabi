@@ -174,7 +174,8 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.85em;width:8px;heig
   font-size:.74rem;font-weight:bold;padding:3px 11px;border-radius:999px;letter-spacing:.04em;
 }
 .group .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
-.group .name{font-weight:bold;font-size:1.04rem;margin:0 0 8px;line-height:1.6}
+.group .name{font-weight:bold;font-size:1.04rem;margin:0 0 4px;line-height:1.6}
+.group .subname{font-size:.78rem;color:var(--ink-soft);margin:0 0 8px;letter-spacing:.02em}
 .group .tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 12px}
 .group .intro{font-size:.9rem;line-height:1.85;margin:0 0 14px;text-align:justify;text-justify:inter-character}
 .group .intro.sample{color:var(--ink-soft)}

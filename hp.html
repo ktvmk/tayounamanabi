@@ -314,6 +314,13 @@
     n.textContent = g.name;
     body.appendChild(n);
 
+    if(g.sub){
+      var sb = document.createElement("p");
+      sb.className = "subname";
+      sb.textContent = g.sub;
+      body.appendChild(sb);
+    }
+
     var tg = document.createElement("p");
     tg.className = "tags";
     g.tags.forEach(function(t){
