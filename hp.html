@@ -390,12 +390,15 @@
       c.className = "roster-city";
       c.textContent = city;
       line.appendChild(c);
+      var names = document.createElement("span");
+      names.className = "roster-names";
+      line.appendChild(names);
       idxs.forEach(function(i, n){
         if(n > 0){
           var sep = document.createElement("span");
           sep.className = "roster-sep";
           sep.textContent = "／";
-          line.appendChild(sep);
+          names.appendChild(sep);
         }
         var a = document.createElement("button");
         a.type = "button";
@@ -410,7 +413,7 @@
           el.classList.add("flash");
           setTimeout(function(){ el.classList.remove("flash"); }, 1600);
         });
-        line.appendChild(a);
+        names.appendChild(a);
       });
       box.appendChild(line);
     });
