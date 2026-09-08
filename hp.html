@@ -85,6 +85,10 @@
     <h2>三重県内 29団体</h2>
     <p>市町ごとに並べています。画面上部の市町でしぼり込めます。写真をおすと大きく見られます。</p>
 
+    <p class="note" style="margin-top:12px">いまは、団体名と市町、活動の種類だけを載せています。それぞれの団体の紹介文や、対象・活動日・費用・連絡先は「確認中」と表示しており、これから会のメンバーが各団体をたずねてお話をうかがい、確かめたものから順に書き足していきます。さがしている方は、気になる団体が見つかりましたら、まずは会のお問い合わせ先までご連絡ください。会から団体へおつなぎします。</p>
+
+    <p class="note" style="margin-top:8px">加盟団体のみなさまへ：この一覧をご確認いただき、内容にまちがいがある場合や、先に載せてほしいことがありましたら、ページ下のお問い合わせ先までご連絡ください。</p>
+
     <div class="kinds" id="kindRow"></div>
     <p class="count" id="count"></p>
     <div id="list"></div>
@@ -398,7 +402,7 @@
     var g = GROUPS[curG];
     lbimg.src = g.photos[curP];
     lbimg.alt = g.name;
-    lbt.textContent = g.name;
+    lbt.textContent = g.name + (g.sub ? "（" + g.sub + "）" : "");
     lbs.textContent = g.city + "　　" + (curP + 1) + " / " + g.photos.length;
   }
   function openLb(gi, pi){

@@ -22,8 +22,8 @@ const SAMPLE_INTRO = "ここに団体の紹介文が入ります。どんな思�
 const PLACEHOLDER_INTRO = "ここに団体の紹介文が入ります。どんな思いで始まった場所なのか、どんな一日を過ごしているのか、どんな子どもたちが通っているのかを、会のメンバーがうかがって書きます。";
 
 const GROUPS = [
-  { name:"トーキョーコーヒー桑名", kind:["親の会", "居場所"], city:"桑名市", tags:["sou","asobi"],
-    sub:"拠点番号 468（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"桑名市", tags:["sou","asobi"],
+    sub:"トーキョーコーヒー468（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph3.svg","assets/img/ph1.svg","assets/img/ph2.svg"] },
@@ -43,8 +43,8 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph2.svg","assets/img/ph6.svg","assets/img/ph1.svg"] },
 
-  { name:"トーキョーコーヒー四日市", kind:["親の会", "居場所"], city:"四日市市", tags:["sou","asobi"],
-    sub:"拠点番号 145（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"四日市市", tags:["sou","asobi"],
+    sub:"トーキョーコーヒー145（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph4.svg","assets/img/ph3.svg","assets/img/ph5.svg"] },
@@ -65,14 +65,14 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph2.svg","assets/img/ph3.svg","assets/img/ph6.svg"] },
 
-  { name:"トーキョーコーヒー鈴鹿", kind:["親の会", "居場所"], city:"鈴鹿市", tags:["sou","asobi"],
-    sub:"拠点番号 17（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"鈴鹿市", tags:["sou","asobi"],
+    sub:"トーキョーコーヒー17（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph1.svg","assets/img/ph4.svg","assets/img/ph2.svg"] },
 
-  { name:"トーキョーコーヒー鈴鹿", kind:["親の会", "居場所"], city:"鈴鹿市", tags:["sou"],
-    sub:"拠点番号 291（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"鈴鹿市", tags:["sou"],
+    sub:"トーキョーコーヒー291（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph5.svg","assets/img/ph1.svg","assets/img/ph3.svg"] },
@@ -107,8 +107,8 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph4.svg","assets/img/ph1.svg","assets/img/ph6.svg"] },
 
-  { name:"トーキョーコーヒー津", kind:["親の会", "居場所"], city:"津市", tags:["sou","asobi"],
-    sub:"拠点番号 294（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"津市", tags:["sou","asobi"],
+    sub:"トーキョーコーヒー294（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph3.svg","assets/img/ph5.svg","assets/img/ph2.svg"] },
@@ -150,8 +150,8 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph4.svg","assets/img/ph6.svg","assets/img/ph2.svg"] },
 
-  { name:"トーキョーコーヒー松阪", kind:["親の会", "居場所"], city:"松阪市", tags:["sou","asobi"],
-    sub:"拠点番号 425（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"松阪市", tags:["sou","asobi"],
+    sub:"トーキョーコーヒー425（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph1.svg","assets/img/ph2.svg","assets/img/ph6.svg"] },
@@ -166,8 +166,8 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph2.svg","assets/img/ph5.svg","assets/img/ph3.svg"] },
 
-  { name:"トーキョーコーヒー志摩", kind:["親の会", "居場所"], city:"志摩市", tags:["tai","asobi"],
-    sub:"拠点番号 478（正式な拠点名は確認中）",
+  { name:"〇〇〇〇", kind:["親の会", "居場所"], city:"志摩市", tags:["tai","asobi"],
+    sub:"トーキョーコーヒー478（正式な拠点名は確認中）",
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph5.svg","assets/img/ph3.svg","assets/img/ph4.svg"] },
