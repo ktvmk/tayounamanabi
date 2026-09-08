@@ -256,6 +256,8 @@ th{background:var(--sky-pale);white-space:nowrap;width:8.5em;font-weight:bold;co
 .roster-sep{color:var(--line);padding:0 2px}
 .group.flash{box-shadow:0 0 0 3px var(--sky-soft)}
 @media (max-width:640px){
-  .roster-line{display:block}
-  .roster-city{width:auto;display:block;margin-top:.5em}
+  .roster-line{display:block;margin:.2em 0;line-height:1.8}
+  .roster-city{width:auto;display:block;margin-top:.9em;margin-bottom:.15em}
+  .roster-sep{display:none}
+  .roster-name{display:block;padding:.22em 0 .22em .9em}
 }
