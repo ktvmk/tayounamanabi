@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>子どもの多様な学びを育む会in三重</title>
 <meta name="description" content="三重県内のフリースクール・親の会・居場所がつながる会です。お住まいの市町から、子どもに合う学びの場をさがせます。">
-<link rel="stylesheet" href="assets/style.css?v=202609090004">
+<link rel="stylesheet" href="assets/style.css?v=202609090006">
 </head>
 <body>
 
@@ -192,7 +192,7 @@
   <div id="lbinfo"><div class="t"></div><div class="s"></div></div>
 </div>
 
-<script src="assets/groups.js?v=202609090004"></script>
+<script src="assets/groups.js?v=202609090006"></script>
 <script>
 (function(){
   /* ---------- 出現アニメーション ---------- */
@@ -248,6 +248,17 @@
     return b;
   }
 
+  function headerOffset(){
+    var h = document.querySelector(".site-header");
+    return (h ? h.offsetHeight : 110) + 14;
+  }
+
+  function scrollToCity(city){
+    var el = document.querySelector('.city-block[data-city="' + city + '"]');
+    if(!el){ jumpToList(); return; }
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - headerOffset(), behavior: "smooth" });
+  }
+
   function jumpToList(){
     var top = document.getElementById("groups").offsetTop - 140;
     if(window.scrollY > top){ window.scrollTo({ top: top, behavior: "smooth" }); }
@@ -261,8 +272,7 @@
       CITY_ORDER.forEach(function(c){
         box.appendChild(chip(c, selCity === c, function(){
           selCity = (selCity === c ? "all" : c); render();
-          var t = document.getElementById("groups").offsetTop - 140;
-          if(window.scrollY > t){ window.scrollTo({ top: t, behavior: "smooth" }); }
+          if(selCity === "all"){ jumpToList(); } else { scrollToCity(c); }
         }));
       });
     });
@@ -386,9 +396,11 @@
       if(idxs.length === 0) return;
       var line = document.createElement("p");
       line.className = "roster-line";
-      var c = document.createElement("span");
+      var c = document.createElement("button");
+      c.type = "button";
       c.className = "roster-city";
       c.textContent = city;
+      c.addEventListener("click", function(){ scrollToCity(city); });
       line.appendChild(c);
       var names = document.createElement("span");
       names.className = "roster-names";
@@ -409,7 +421,7 @@
           selCity = "all"; selKind = "all"; render();
           var el = document.getElementById("g" + i);
           if(!el) return;
-          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150, behavior: "smooth" });
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - headerOffset(), behavior: "smooth" });
           el.classList.add("flash");
           setTimeout(function(){ el.classList.remove("flash"); }, 1600);
         });
@@ -437,6 +449,7 @@
       if(inCity.length === 0) return;
       var block = document.createElement("div");
       block.className = "city-block reveal";
+      block.setAttribute("data-city", city);
       var h = document.createElement("div");
       h.className = "city-name";
       h.textContent = city + "（" + inCity.length + "）";

@@ -249,7 +249,7 @@ th{background:var(--sky-pale);white-space:nowrap;width:8.5em;font-weight:bold;co
 .roster{margin:14px 0 4px;padding:20px 24px}
 .roster .kicker{margin:0 0 12px;font-size:1.02rem;font-weight:bold;letter-spacing:.06em}
 .roster-line{display:flex;align-items:baseline;gap:1em;margin:.5em 0;line-height:2.05;text-align:left}
-.roster-city{flex:none;width:7em;font-weight:bold;color:var(--sky-deep);font-size:.98rem}
+.roster-city{flex:none;width:7em;font-family:inherit;font-weight:bold;color:var(--sky-deep);font-size:.98rem;background:none;border:none;padding:0;text-align:left;cursor:pointer}
 .roster-names{flex:1;min-width:0}
 .roster-name{font-family:inherit;font-size:1.01rem;font-weight:bold;color:var(--ink);background:none;border:none;padding:0 2px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--sky-soft);text-underline-offset:4px}
 .roster-name:hover{color:var(--sky-deep)}
