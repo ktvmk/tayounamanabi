@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>子どもの多様な学びを育む会in三重</title>
+<meta name="description" content="三重県内のフリースクール・親の会・居場所がつながる会です。お住まいの市町から、子どもに合う学びの場をさがせます。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="site-title"><a href="#top">子どもの多様な学びを育む会 in 三重</a></p>
+    <nav class="site-nav">
+      <a href="#top" data-nav="top">ホーム</a>
+      <a href="#groups" data-nav="groups">加盟団体</a>
+      <a href="#about" data-nav="about">会について</a>
+      <a href="#contact" data-nav="contact">お問い合わせ</a>
+    </nav>
+  </div>
+  <div class="citybar">
+    <div class="inner">
+      <span class="label">市町でさがす</span>
+      <div class="row" id="cityRow"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== ホーム ===== -->
+  <section id="top" class="hero">
+    <h1>子どもの多様な学びを育む会<span class="in">in 三重</span></h1>
+    <p class="catch">フリースクール、親の会、居場所。<br>子どもに合う学びの場が、三重にはあります。</p>
+    <p class="lead">三重県内の29のフリースクール・親の会・居場所がつながっています。</p>
+    <p>自分らしく安心してすごせる居場所を、学びの場を、学びのスタイルを、<br>子どもたちが自由に選択しやすくなる社会を目指して活動しています。</p>
+    <div class="actions">
+      <a class="btn" href="#groups">お住まいの市町から団体をさがす</a>
+      <a class="btn ghost" href="#contact">会に問い合わせる</a>
+    </div>
+  </section>
+
+  <section class="narrow reveal">
+    <p class="kicker">こんなことで困っていませんか</p>
+    <h2>ひとりで悩まず、まずは相談を</h2>
+    <div class="card pink">
+      <ul class="plain">
+        <li>学校に行くことが難しいけれど、どうしてよいのか悩んでいる</li>
+        <li>学校とはまた違う、体を動かしたりパソコンやゲームができるような学びの場所は他にもないかな？</li>
+        <li>フリースクールや支援の情報が知りたい</li>
+        <li>進路や学び方の選択肢を拡げたい</li>
+        <li>同じ思いを持つ保護者とつながりたい</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="kicker">学校以外の学びについて</p>
+    <h2>学校以外の場で学ぶことは、国の方針でも認められています</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ico a">📘</div>
+        <h3>教育機会確保法（2016年）</h3>
+        <p>不登校の子どもには休養が必要な場合があること、学校以外の場での多様で適切な学習活動が重要であることを踏まえて支援する、と法律に定められています。</p>
+      </div>
+      <div class="pillar">
+        <div class="ico b">🏫</div>
+        <h3>文部科学省の通知（2019年）</h3>
+        <p>「不登校児童生徒への支援の在り方について」では、支援の目標は「学校に登校する」という結果だけではなく、子どもが社会的に自立することだとされています。</p>
+      </div>
+      <div class="pillar">
+        <div class="ico c">✅</div>
+        <h3>出席扱いになることも</h3>
+        <p>フリースクールなどで学んだ日は、一定の要件のもと、在籍している学校の校長の判断で出席扱いにできます。まずは学校に相談してみてください。</p>
+      </div>
+    </div>
+    <p class="note">不登校の小中学生は全国で34万人を超えています（文部科学省 令和5年度「児童生徒の問題行動・不登校等生徒指導上の諸課題に関する調査」）。特別なことではありません。</p>
+  </section>
+
+  <!-- ===== 加盟団体 ===== -->
+  <section id="groups">
+    <p class="kicker">加盟団体</p>
+    <h2>三重県内 29団体</h2>
+    <p>市町ごとに並べています。画面上部の市町でしぼり込めます。写真をおすと大きく見られます。</p>
+
+    <div class="kinds" id="kindRow"></div>
+    <p class="count" id="count"></p>
+    <div id="list"></div>
+
+    <div class="card flat" style="margin-top:36px">
+      <p class="kicker">カードに付いている札について</p>
+      <div class="legend">
+        <div><span class="tag gaku">学</span>座学による学習</div>
+        <div><span class="tag tai">体</span>体験型学習</div>
+        <div><span class="tag sou">相</span>親（子）を対象とした相談・語らいの場</div>
+        <div><span class="tag asobi">遊</span>親（子）を対象とした遊び・体験の場</div>
+        <div><span class="tag hoka">他</span>上記に当てはまらないその他の活動</div>
+      </div>
+      <p class="note">費用や活動日は変わることがあります。最新の情報は各団体、または会にご確認ください。</p>
+    </div>
+  </section>
+
+  <!-- ===== 会について ===== -->
+  <section id="about">
+    <p class="kicker">会について</p>
+    <h2>三重県内の学び場と支援者がつながる会です</h2>
+
+    <div class="about-grid">
+      <div>
+        <div class="card sky reveal">
+          <h3 style="margin-top:0">目指していること</h3>
+          <p>子どもの多様な学びの選択肢を増やす活動を行うことにより、<strong>子どもの人権が尊重される教育環境を創る</strong>こと。これが会の目的です。</p>
+          <p>自分らしく安心してすごせる居場所を、学びの場を、学びのスタイルを、子どもたちが自由に選択しやすくなる社会を目指しています。</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-top:0">している活動</h3>
+          <ul class="plain">
+            <li>普及啓発のためのイベントの実施</li>
+            <li>子どもの多様な学び場創設のための支援</li>
+            <li>相談窓口および相談会の運営</li>
+            <li>相談者が学び場を選択する支援</li>
+            <li>子どもの多様な学び場の実態調査</li>
+            <li>その他、目的の達成に必要な活動</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card flat reveal">
+          <h3 style="margin-top:0">これまでの歩み</h3>
+          <ul class="timeline">
+            <li><span class="t">2022年8月</span>会を設立</li>
+            <li><span class="t">2025年4月</span>会則を改訂（事務局の設置、会員種別の整理）</li>
+            <li><span class="t">2025年9月</span>親子の居場所・多様な学び相談＆座談会を開催（四日市市・津市）</li>
+            <li><span class="t">2026年8月</span>ワンストップ型の保護者相談会を開催（四日市市）</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-top:0">会員について</h3>
+          <table>
+            <tr><th>正会員</th><td>会の目的に賛同し、子どもの多様な学び場を創ることに寄与する会員。総会での議決権があります。<br>会費：団体 年3,000円／個人 年2,000円<br>※団体には、個人が運営する任意団体やスクールも含みます。</td></tr>
+            <tr><th>賛助会員</th><td>会の目的に賛同し、支援を行う会員。会費はいただきません。</td></tr>
+          </table>
+          <p class="note">入会をご希望の方は、入会申込書をご提出いただき、理事会の承認を経て入会となります。まずはお問い合わせください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== お問い合わせ ===== -->
+  <section id="contact" class="narrow reveal">
+    <p class="kicker">お問い合わせ</p>
+    <h2>まずは、いまの状況をお聞かせください</h2>
+    <div class="card green">
+      <p>「どこに相談したらいいかわからない」という段階でも構いません。お住まいの地域と、いま困っていることを書いてお送りください。会から各スクール・居場所へおつなぎします。お子さんご本人からのご連絡も歓迎します。</p>
+      <a class="btn green" href="mailto:miekodomo.ground@gmail.com">miekodomo.ground@gmail.com にメールする</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p class="name">子どもの多様な学びを育む会 in 三重</p>
+    <p>2022年8月1日設立</p>
+    <p><a href="mailto:miekodomo.ground@gmail.com">miekodomo.ground@gmail.com</a></p>
+    <a class="totop" href="#top">↑ ページの先頭へ</a>
+  </div>
+</footer>
+
+<!-- ライトボックス -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="写真の拡大表示">
+  <button id="lbclose" aria-label="閉じる">×</button>
+  <button class="lbbtn" id="lbprev" aria-label="前へ">‹</button>
+  <div id="lbstage"><img id="lbimg" alt=""></div>
+  <button class="lbbtn" id="lbnext" aria-label="次へ">›</button>
+  <div id="lbinfo"><div class="t"></div><div class="s"></div></div>
+</div>
+
+<script src="assets/groups.js"></script>
+<script>
+(function(){
+  /* ---------- 出現アニメーション ---------- */
+  function setupReveal(){
+    var els = document.querySelectorAll(".reveal:not(.in)");
+    if(!("IntersectionObserver" in window)){
+      for(var i=0;i<els.length;i++){ els[i].classList.add("in"); }
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    },{ threshold:.1 });
+    for(var j=0;j<els.length;j++){ io.observe(els[j]); }
+  }
+
+  /* ---------- ナビの現在地 ---------- */
+  (function(){
+    var links = document.querySelectorAll(".site-nav a[data-nav]");
+    var ids = ["top","groups","about","contact"];
+    function update(){
+      var y = window.scrollY + 160;
+      var cur = "top";
+      for(var i=0;i<ids.length;i++){
+        var el = document.getElementById(ids[i]);
+        if(el && el.offsetTop <= y){ cur = ids[i]; }
+      }
+      for(var k=0;k<links.length;k++){
+        links[k].classList.toggle("on", links[k].getAttribute("data-nav") === cur);
+      }
+    }
+    window.addEventListener("scroll", update, { passive:true });
+    update();
+  })();
+
+  /* ---------- 一覧 ---------- */
+  var KINDS = ["フリースクール","親の会","居場所"];
+  var selCity = "all";
+  var selKind = "all";
+  var cityRow = document.getElementById("cityRow");
+  var kindRow = document.getElementById("kindRow");
+  var list    = document.getElementById("list");
+  var count   = document.getElementById("count");
+
+  function chip(text, on, handler){
+    var b = document.createElement("button");
+    b.className = "chip" + (on ? " on" : "");
+    b.type = "button";
+    b.textContent = text;
+    b.addEventListener("click", handler);
+    return b;
+  }
+
+  function jumpToList(){
+    var top = document.getElementById("groups").offsetTop - 140;
+    if(window.scrollY > top){ window.scrollTo({ top: top, behavior: "smooth" }); }
+  }
+
+  function buildFilters(){
+    cityRow.innerHTML = "";
+    cityRow.appendChild(chip("すべて", selCity === "all", function(){ selCity = "all"; render(); jumpToList(); }));
+    CITY_ORDER.forEach(function(c){
+      cityRow.appendChild(chip(c, selCity === c, function(){
+        selCity = (selCity === c ? "all" : c); render();
+        var t = document.getElementById("groups").offsetTop - 140;
+        window.scrollTo({ top: t, behavior: "smooth" });
+      }));
+    });
+    kindRow.innerHTML = "";
+    kindRow.appendChild(chip("すべて", selKind === "all", function(){ selKind = "all"; render(); }));
+    KINDS.forEach(function(k){
+      kindRow.appendChild(chip(k, selKind === k, function(){ selKind = (selKind === k ? "all" : k); render(); }));
+    });
+  }
+
+  function match(g){
+    if(selCity !== "all" && g.city !== selCity) return false;
+    if(selKind !== "all" && g.kind.indexOf(selKind) < 0) return false;
+    return true;
+  }
+
+  function row(dl, label, value, isLink){
+    var dt = document.createElement("dt");
+    dt.textContent = label;
+    dl.appendChild(dt);
+    var dd = document.createElement("dd");
+    if(value){
+      if(isLink){
+        var a = document.createElement("a");
+        a.href = value; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = value.replace(/^https?:\/\//, "").replace(/\/$/, "");
+        dd.appendChild(a);
+      }else{
+        dd.textContent = value;
+      }
+    }else{
+      dd.className = "un";
+      dd.textContent = "確認中";
+    }
+    dl.appendChild(dd);
+  }
+
+  function card(g, idx){
+    var d = document.createElement("div");
+    d.className = "group";
+
+    var ph = document.createElement("div");
+    ph.className = "photo";
+    var img = document.createElement("img");
+    img.src = g.photos[0];
+    img.alt = g.name;
+    img.loading = "lazy";
+    ph.appendChild(img);
+    var kd = document.createElement("span");
+    kd.className = "kindlabel";
+    kd.textContent = g.kind.join("・");
+    ph.appendChild(kd);
+    if(g.photos.length > 1){
+      var more = document.createElement("span");
+      more.className = "more";
+      more.textContent = "写真 " + g.photos.length + "枚";
+      ph.appendChild(more);
+    }
+    ph.addEventListener("click", function(){ openLb(idx, 0); });
+    d.appendChild(ph);
+
+    var body = document.createElement("div");
+    body.className = "body";
+
+    var n = document.createElement("p");
+    n.className = "name";
+    n.textContent = g.name;
+    body.appendChild(n);
+
+    var tg = document.createElement("p");
+    tg.className = "tags";
+    g.tags.forEach(function(t){
+      var s = document.createElement("span");
+      s.className = "tag " + t;
+      s.textContent = TAG_SHORT[t] + "　" + TAG_LABEL[t];
+      tg.appendChild(s);
+    });
+    body.appendChild(tg);
+
+    var intro = document.createElement("p");
+    intro.className = "intro" + (g.sample ? " sample" : "");
+    intro.textContent = g.intro;
+    body.appendChild(intro);
+
+    var dl = document.createElement("dl");
+    row(dl, "対象",   g.age);
+    row(dl, "活動日", g.days);
+    row(dl, "費用",   g.fee);
+    row(dl, "場所",   g.place);
+    row(dl, "連絡先", g.contact);
+    row(dl, "サイト", g.url, true);
+    body.appendChild(dl);
+
+    if(g.note){
+      var nt = document.createElement("p");
+      nt.className = "note";
+      nt.style.marginTop = "10px";
+      nt.textContent = "※" + g.note;
+      body.appendChild(nt);
+    }
+
+    d.appendChild(body);
+    return d;
+  }
+
+  function render(){
+    buildFilters();
+    var hit = GROUPS.filter(match);
+    count.textContent = hit.length + "団体";
+    list.innerHTML = "";
+    if(hit.length === 0){
+      var p = document.createElement("p");
+      p.className = "note";
+      p.textContent = "条件に合う団体が見つかりませんでした。絞り込みを減らしてみてください。";
+      list.appendChild(p);
+      return;
+    }
+    CITY_ORDER.forEach(function(city){
+      var inCity = hit.filter(function(g){ return g.city === city; });
+      if(inCity.length === 0) return;
+      var block = document.createElement("div");
+      block.className = "city-block reveal";
+      var h = document.createElement("div");
+      h.className = "city-name";
+      h.textContent = city + "（" + inCity.length + "）";
+      block.appendChild(h);
+      var grid = document.createElement("div");
+      grid.className = "group-grid";
+      inCity.forEach(function(g){ grid.appendChild(card(g, GROUPS.indexOf(g))); });
+      block.appendChild(grid);
+      list.appendChild(block);
+    });
+    setupReveal();
+  }
+
+  /* ---------- ライトボックス ---------- */
+  var lb = document.getElementById("lb");
+  var lbimg = document.getElementById("lbimg");
+  var lbt = lb.querySelector("#lbinfo .t");
+  var lbs = lb.querySelector("#lbinfo .s");
+  var curG = 0, curP = 0;
+
+  function showLb(){
+    var g = GROUPS[curG];
+    lbimg.src = g.photos[curP];
+    lbimg.alt = g.name;
+    lbt.textContent = g.name;
+    lbs.textContent = g.city + "　　" + (curP + 1) + " / " + g.photos.length;
+  }
+  function openLb(gi, pi){
+    curG = gi; curP = pi;
+    showLb();
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLb(){
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  function step(d){
+    var n = GROUPS[curG].photos.length;
+    curP = (curP + d + n) % n;
+    showLb();
+  }
+  document.getElementById("lbclose").addEventListener("click", closeLb);
+  document.getElementById("lbprev").addEventListener("click", function(){ step(-1); });
+  document.getElementById("lbnext").addEventListener("click", function(){ step(1); });
+  lb.addEventListener("click", function(e){ if(e.target === lb || e.target.id === "lbstage"){ closeLb(); } });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") closeLb();
+    if(e.key === "ArrowLeft") step(-1);
+    if(e.key === "ArrowRight") step(1);
+  });
+
+  render();
+  setupReveal();
+})();
+</script>
+
+</body>
+</html>

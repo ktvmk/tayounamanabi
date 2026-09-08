@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/* 子どもの多様な学びを育む会in三重 公式サイト（1ページ完結）
+   配色は会のチラシ（そら色・きみどり・やまぶき・さくら）に合わせる */
+
+:root{
+  --sky:#4fb0cf;
+  --sky-soft:#8fd0e3;
+  --sky-pale:#eaf6fa;
+  --sky-deep:#1f6a84;
+  --green:#79bd77;
+  --green-pale:#eef7ed;
+  --yellow:#f2d34f;
+  --pink:#f2a2b3;
+  --pink-pale:#fdf0f3;
+  --ink:#25313a;
+  --ink-soft:#66757e;
+  --line:#e4e8ea;
+  --paper:#ffffff;
+  --ground:#fbfbf9;
+  --maxw:1180px;
+  --narrow:720px;
+  --shadow:0 2px 14px rgba(31,106,132,.07);
+  --shadow-lift:0 10px 28px rgba(31,106,132,.15);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN","Hiragino Sans","Yu Gothic",sans-serif;
+  font-size:16.5px;line-height:2.0;letter-spacing:.02em;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--sky-deep);text-underline-offset:3px}
+
+/* ---------- ヘッダ（固定・ページ内リンク） ---------- */
+.site-header{
+  background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(8px);
+  border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;
+}
+.site-header .inner{
+  max-width:var(--maxw);margin:0 auto;padding:12px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.site-title{font-size:1rem;font-weight:bold;margin:0;line-height:1.5}
+.site-title a{color:var(--ink);text-decoration:none}
+.site-title .sub{display:block;font-size:.66rem;font-weight:normal;color:var(--ink-soft);letter-spacing:.16em;margin-top:2px}
+.site-nav{display:flex;flex-wrap:wrap;gap:6px}
+.site-nav a{
+  display:block;padding:6px 15px;border-radius:999px;text-decoration:none;
+  font-size:.85rem;color:var(--ink-soft);transition:.18s;
+}
+.site-nav a:hover{background:var(--sky-pale);color:var(--sky-deep)}
+.site-nav a.on{background:var(--sky);color:#fff;font-weight:bold}
+
+/* 市町の帯（ヘッダ内で常に1行・固定） */
+.citybar{background:var(--sky-pale);border-top:1px solid #d4ecf3}
+.citybar .inner{
+  max-width:var(--maxw);margin:0 auto;padding:8px 22px;
+  display:flex;align-items:center;gap:12px;
+}
+.citybar .label{flex:none;font-size:.78rem;font-weight:bold;color:var(--sky-deep);letter-spacing:.08em;white-space:nowrap}
+.citybar .row{
+  display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px 0;
+}
+.citybar .row::-webkit-scrollbar{display:none}
+.citybar .chip{flex:none;font-size:.8rem;padding:4px 13px}
+
+/* ---------- 本体 ---------- */
+main{max-width:var(--maxw);margin:0 auto;padding:0 22px 70px}
+section{margin:70px 0;scroll-margin-top:130px}
+.narrow{max-width:var(--narrow);margin-left:auto;margin-right:auto}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- ヒーロー ---------- */
+.hero{
+  position:relative;overflow:hidden;border-radius:28px;margin-top:26px;
+  padding:80px 30px 70px;text-align:center;
+  background:
+    radial-gradient(56% 74% at 12% 8%, rgba(143,208,227,.55) 0%, rgba(143,208,227,0) 62%),
+    radial-gradient(46% 60% at 90% 6%, rgba(242,211,79,.42) 0%, rgba(242,211,79,0) 60%),
+    radial-gradient(50% 62% at 82% 96%, rgba(242,162,179,.36) 0%, rgba(242,162,179,0) 62%),
+    radial-gradient(52% 62% at 8% 96%, rgba(121,189,119,.32) 0%, rgba(121,189,119,0) 62%),
+    #fff;
+}
+.hero h1{font-size:2.3rem;line-height:1.5;margin:0 0 18px;letter-spacing:.06em}
+.hero h1 .in{display:inline-block;font-size:.62em;margin-left:.5em;color:var(--sky-deep);letter-spacing:.1em;vertical-align:baseline}
+.hero .catch{font-size:1.18rem;line-height:1.9;margin:0 0 22px;color:var(--ink);letter-spacing:.04em}
+.hero .lead{font-size:1rem;margin:0 0 10px}
+.hero p{margin:.35em 0;color:var(--ink-soft);font-size:.98rem;line-height:1.95}
+.hero .eyebrow{
+  display:inline-block;font-size:.74rem;letter-spacing:.18em;color:var(--sky-deep);
+  background:rgba(255,255,255,.75);border-radius:999px;padding:4px 16px;margin-bottom:20px;
+}
+.hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.hero .actions .btn{margin:0;min-width:260px}
+
+/* ---------- 見出し ---------- */
+h2{
+  font-size:1.5rem;margin:0 0 18px;line-height:1.6;letter-spacing:.03em;
+  padding-bottom:12px;position:relative;
+}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:4px;border-radius:2px;background:var(--green)}
+h2.center{text-align:center}
+h2.center::after{left:50%;transform:translateX(-50%)}
+.kicker{font-size:.76rem;letter-spacing:.2em;color:var(--sky-deep);margin:0 0 6px;font-weight:bold}
+h3{font-size:1.05rem;margin:26px 0 6px}
+p{margin:.7em 0}
+.card p,.pillar p,ul.plain li,.group dd{text-align:justify;text-justify:inter-character}
+
+/* ---------- カード・ボタン ---------- */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin:18px 0;box-shadow:var(--shadow)}
+.card.sky{background:var(--sky-pale);border-color:#d4ecf3;box-shadow:none}
+.card.pink{background:var(--pink-pale);border-color:#f6dde3;box-shadow:none}
+.card.green{background:var(--green-pale);border-color:#dbeeda;box-shadow:none}
+.card.flat{box-shadow:none}
+
+ul.plain{list-style:none;padding-left:0;margin:.6em 0}
+ul.plain li{padding-left:1.5em;position:relative;margin:.5em 0}
+ul.plain li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.note{font-size:.87rem;color:var(--ink-soft);line-height:1.85}
+
+.btn{
+  display:block;text-align:center;text-decoration:none;background:var(--sky);color:#fff;font-weight:bold;
+  padding:17px 22px;border-radius:14px;margin:14px 0;font-size:1.02rem;box-shadow:var(--shadow);transition:.2s;
+}
+.btn:hover{background:var(--sky-deep);box-shadow:var(--shadow-lift);transform:translateY(-2px)}
+.btn.green{background:var(--green)}
+.btn.green:hover{background:#5da358}
+.btn.ghost{background:#fff;color:var(--sky-deep);border:1.5px solid var(--sky-soft);box-shadow:none}
+.btn.ghost:hover{background:var(--sky-pale)}
+
+/* ---------- 3つの柱（横並び） ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px 0}
+.pillar{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 22px;box-shadow:var(--shadow)}
+.pillar .ico{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:12px}
+.pillar .ico.a{background:var(--sky-pale)} .pillar .ico.b{background:var(--green-pale)} .pillar .ico.c{background:var(--pink-pale)}
+.pillar h3{margin:0 0 6px;font-size:1.02rem}
+.pillar p{margin:0;font-size:.92rem;color:var(--ink-soft);line-height:1.85}
+
+/* ---------- 加盟団体一覧 ---------- */
+.kinds{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.kinds .chip{font-size:.9rem;padding:8px 20px}
+.chip{font-family:inherit;font-size:.84rem;padding:6px 15px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.16s}
+.chip:hover{border-color:var(--sky-soft);background:var(--sky-pale)}
+.chip.on{background:var(--sky);border-color:var(--sky);color:#fff;font-weight:bold}
+.count{font-size:.86rem;color:var(--ink-soft);margin:14px 4px}
+
+.city-block{margin:40px 0}
+.city-name{
+  display:inline-block;background:var(--yellow);color:var(--ink);font-weight:bold;font-size:.92rem;
+  padding:4px 18px;border-radius:999px;margin-bottom:14px;letter-spacing:.06em;
+}
+.group-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.group{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column;height:100%;
+}
+.group:hover{box-shadow:var(--shadow-lift);border-color:var(--sky-soft)}
+.group .photo{
+  position:relative;aspect-ratio:4/3;background:var(--sky-pale);overflow:hidden;cursor:zoom-in;flex:none;
+}
+.group .photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.group:hover .photo img{transform:scale(1.04)}
+.group .photo .more{
+  position:absolute;right:10px;bottom:10px;background:rgba(37,49,58,.7);color:#fff;font-size:.72rem;
+  padding:3px 10px;border-radius:999px;letter-spacing:.04em;
+}
+.group .photo .kindlabel{
+  position:absolute;left:10px;top:10px;background:rgba(255,255,255,.92);color:var(--sky-deep);
+  font-size:.74rem;font-weight:bold;padding:3px 11px;border-radius:999px;letter-spacing:.04em;
+}
+.group .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.group .name{font-weight:bold;font-size:1.04rem;margin:0 0 8px;line-height:1.6}
+.group .tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 12px}
+.group .intro{font-size:.9rem;line-height:1.85;margin:0 0 14px;text-align:justify;text-justify:inter-character}
+.group .intro.sample{color:var(--ink-soft)}
+.group dl{margin:0;padding-top:12px;border-top:1px solid var(--line);font-size:.85rem;line-height:1.75}
+.group dt{float:left;clear:left;width:5em;color:var(--sky-deep);font-weight:bold}
+.group dd{margin:0 0 4px 5.4em}
+.group dd.un{color:#9aa7ad}
+.group dd a{word-break:break-all}
+.tag{font-size:.76rem;padding:3px 11px;border-radius:999px;color:#fff;white-space:nowrap;letter-spacing:.04em}
+.tag.gaku{background:#c286b6} .tag.tai{background:#79bd77} .tag.sou{background:#e79b45} .tag.asobi{background:#4fb0cf} .tag.hoka{background:#838cc4}
+.legend{display:flex;flex-wrap:wrap;gap:12px 20px;margin:14px 0 0}
+.legend div{font-size:.86rem;display:flex;align-items:center;gap:8px}
+
+/* ---------- ライトボックス ---------- */
+#lb{position:fixed;inset:0;background:rgba(20,28,36,.94);display:none;flex-direction:column;z-index:80;padding:2.2vh 2vw 1.6vh}
+#lb.open{display:flex}
+#lbstage{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center}
+#lbimg{max-width:100%;max-height:100%;object-fit:contain;background:#fff;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+#lbinfo{flex:none;color:#fff;text-align:center;max-width:900px;margin:10px auto 0}
+#lbinfo .t{font-size:1.05rem;font-weight:bold}
+#lbinfo .s{color:#c9d3da;font-size:.85rem;margin-top:3px}
+.lbbtn{position:fixed;top:0;bottom:0;width:12vw;min-width:52px;border:0;background:transparent;color:#fff;font-size:2.4rem;cursor:pointer;opacity:.55}
+.lbbtn:hover{opacity:1}
+#lbprev{left:0} #lbnext{right:0}
+#lbclose{position:fixed;top:12px;right:16px;font-size:2rem;color:#fff;background:transparent;border:0;cursor:pointer;z-index:90;line-height:1}
+
+/* ---------- 表・歩み ---------- */
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:.94rem;margin:16px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+th,td{padding:12px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child th,tr:last-child td{border-bottom:none}
+th{background:var(--sky-pale);white-space:nowrap;width:8.5em;font-weight:bold;color:var(--sky-deep)}
+.timeline{list-style:none;padding:0;margin:18px 0}
+.timeline li{position:relative;padding:0 0 20px 30px;border-left:2px solid var(--sky-pale);margin:0}
+.timeline li:last-child{border-left-color:transparent;padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.75em;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--sky-soft)}
+.timeline .t{font-weight:bold;font-size:.9rem;color:var(--sky-deep);display:block;line-height:1.7}
+
+/* ---------- 会について：2カラム ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+
+/* ---------- フッタ ---------- */
+.site-footer{background:linear-gradient(180deg,#fff 0%,var(--sky-pale) 100%);border-top:1px solid var(--line);padding:38px 22px 46px;margin-top:50px}
+.site-footer .inner{max-width:var(--maxw);margin:0 auto;font-size:.9rem;text-align:center}
+.site-footer .name{font-weight:bold;margin:0 0 8px;font-size:.98rem}
+.site-footer p{margin:.35em 0;color:var(--ink-soft)}
+.totop{display:inline-block;margin-top:14px;font-size:.85rem}
+
+@media (max-width:1000px){
+  .group-grid{grid-template-columns:repeat(2,1fr)}
+  .pillars{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+}
+@media (max-width:660px){
+  body{font-size:15.5px}
+  .group-grid{grid-template-columns:1fr}
+  .hero{padding:50px 22px 44px;border-radius:20px}
+  .hero h1{font-size:1.55rem}
+  .hero h1 .in{display:block;margin:6px 0 0}
+  .hero .catch{font-size:1.02rem}
+  .site-header .inner{padding:10px 16px}
+  .citybar .inner{padding:6px 16px}
+  th{width:auto}
+  .lbbtn{font-size:1.6rem;min-width:40px}
+}

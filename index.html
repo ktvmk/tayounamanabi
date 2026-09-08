@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>関係者用ページ</title>
+<style>
+  :root { color-scheme: light only; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: #f4f7f9;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: #1f2b33; padding: 24px;
+  }
+  .box {
+    width: 100%; max-width: 380px; background: #fff;
+    border-radius: 14px; padding: 36px 28px 30px;
+    box-shadow: 0 2px 20px rgba(31,43,51,.10);
+    text-align: center;
+  }
+  h1 { font-size: 17px; margin: 0 0 6px; font-weight: 600; letter-spacing: .04em; }
+  p.lead { font-size: 13px; color: #66757f; margin: 0 0 22px; line-height: 1.7; }
+  input {
+    width: 100%; padding: 12px 14px; font-size: 16px;
+    border: 1px solid #d3dde3; border-radius: 8px; text-align: center;
+    letter-spacing: .1em; background: #fff; color: #1f2b33;
+  }
+  input:focus { outline: none; border-color: #7fb3d5; box-shadow: 0 0 0 3px rgba(127,179,213,.22); }
+  button {
+    width: 100%; margin-top: 14px; padding: 12px;
+    font-size: 15px; font-weight: 600; color: #fff;
+    background: #4a90b8; border: none; border-radius: 8px; cursor: pointer;
+  }
+  button:hover { background: #3d7da0; }
+  .err { margin-top: 14px; font-size: 13px; color: #c0392b; min-height: 1.2em; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>関係者用ページ</h1>
+    <p class="lead">パスワードを入力してください。</p>
+    <form id="f" autocomplete="off">
+      <input id="pw" type="password" inputmode="text" placeholder="パスワード" autocomplete="off">
+      <button type="submit">ひらく</button>
+    </form>
+    <div class="err" id="err"></div>
+  </div>
+<script>
+const HASH = "ea6c969ddf6085882b05b1153853641419e9cfd46d9a1dd2474678d2e5bb741a";
+const f = document.getElementById('f');
+const pw = document.getElementById('pw');
+const err = document.getElementById('err');
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  err.textContent = '';
+  const buf = new TextEncoder().encode(pw.value);
+  const digest = await crypto.subtle.digest('SHA-256', buf);
+  const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+  if (hex === HASH) {
+    location.href = 'hp.html';
+  } else {
+    err.textContent = 'パスワードが違います。';
+    pw.value = '';
+    pw.focus();
+  }
+});
+</script>
+</body>
+</html>
