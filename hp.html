@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>子どもの多様な学びを育む会in三重</title>
 <meta name="description" content="三重県内のフリースクール・親の会・居場所がつながる会です。お住まいの市町から、子どもに合う学びの場をさがせます。">
-<link rel="stylesheet" href="assets/style.css?v=202609090006">
+<link rel="stylesheet" href="assets/style.css?v=202609090014">
 </head>
 <body>
 
@@ -192,7 +192,7 @@
   <div id="lbinfo"><div class="t"></div><div class="s"></div></div>
 </div>
 
-<script src="assets/groups.js?v=202609090006"></script>
+<script src="assets/groups.js?v=202609090014"></script>
 <script>
 (function(){
   /* ---------- 出現アニメーション ---------- */
@@ -247,6 +247,24 @@
     b.addEventListener("click", handler);
     return b;
   }
+
+  /* 固定ヘッダーのぶんだけ、アンカー移動の着地点を下げる */
+  function syncScrollPadding(){
+    var h = document.querySelector(".site-header");
+    document.documentElement.style.scrollPaddingTop = ((h ? h.offsetHeight : 110) + 14) + "px";
+  }
+  syncScrollPadding();
+  window.addEventListener("resize", syncScrollPadding);
+  window.addEventListener("load", syncScrollPadding);
+
+  /* 「ホーム」「ページの先頭へ」は本当の最上部へ戻す */
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#top"]'), function(a){
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if(history.replaceState){ history.replaceState(null, "", location.pathname + location.search); }
+    });
+  });
 
   function headerOffset(){
     var h = document.querySelector(".site-header");
