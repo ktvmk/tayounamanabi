@@ -143,6 +143,10 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.85em;width:8px;heig
 
 /* ---------- 加盟団体一覧 ---------- */
 .kinds{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.filterline{display:flex;align-items:flex-start;gap:12px;margin:14px 0 4px}
+.filterline .flabel{flex:none;font-size:.82rem;font-weight:bold;color:var(--sky-deep);letter-spacing:.06em;white-space:nowrap;padding-top:11px}
+.filterline .kinds{margin:0}
+.kinds.cityset .chip{font-size:.82rem;padding:6px 14px}
 .kinds .chip{font-size:.9rem;padding:8px 20px}
 .chip{font-family:inherit;font-size:.84rem;padding:6px 15px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.16s}
 .chip:hover{border-color:var(--sky-soft);background:var(--sky-pale)}

@@ -85,9 +85,16 @@
     <h2>三重県内 29団体</h2>
     <p>市町ごとに並べています。画面上部の市町でしぼり込めます。写真をおすと大きく見られます。</p>
 
-    <p class="note" style="margin-top:12px">気になる団体が見つかりましたら、各団体へ直接お問い合わせください。どこに相談したらよいか分からないときや、ご不明な点がありましたら、育む会でもご相談をお受けします。</p>
+    <p class="note" style="margin-top:12px">気になる団体が見つかりましたら、各団体へ直接お問い合わせください。ご不明な点、その他のご相談は、育む会にご連絡ください。</p>
 
-    <div class="kinds" id="kindRow"></div>
+    <div class="filterline">
+      <span class="flabel">フィルタ</span>
+      <div class="kinds" id="kindRow"></div>
+    </div>
+    <div class="filterline">
+      <span class="flabel">市町</span>
+      <div class="kinds cityset" id="cityRow2"></div>
+    </div>
     <p class="count" id="count"></p>
     <div id="list"></div>
 
@@ -218,10 +225,11 @@
   })();
 
   /* ---------- 一覧 ---------- */
-  var KINDS = ["フリースクール","親の会","居場所"];
+  var KINDS = ["フリースクール","親の会","居場所","その他"];
   var selCity = "all";
   var selKind = "all";
   var cityRow = document.getElementById("cityRow");
+  var cityRow2 = document.getElementById("cityRow2");
   var kindRow = document.getElementById("kindRow");
   var list    = document.getElementById("list");
   var count   = document.getElementById("count");
@@ -241,14 +249,17 @@
   }
 
   function buildFilters(){
-    cityRow.innerHTML = "";
-    cityRow.appendChild(chip("すべて", selCity === "all", function(){ selCity = "all"; render(); jumpToList(); }));
-    CITY_ORDER.forEach(function(c){
-      cityRow.appendChild(chip(c, selCity === c, function(){
-        selCity = (selCity === c ? "all" : c); render();
-        var t = document.getElementById("groups").offsetTop - 140;
-        window.scrollTo({ top: t, behavior: "smooth" });
-      }));
+    [cityRow, cityRow2].forEach(function(box){
+      if(!box) return;
+      box.innerHTML = "";
+      box.appendChild(chip("すべて", selCity === "all", function(){ selCity = "all"; render(); jumpToList(); }));
+      CITY_ORDER.forEach(function(c){
+        box.appendChild(chip(c, selCity === c, function(){
+          selCity = (selCity === c ? "all" : c); render();
+          var t = document.getElementById("groups").offsetTop - 140;
+          if(window.scrollY > t){ window.scrollTo({ top: t, behavior: "smooth" }); }
+        }));
+      });
     });
     kindRow.innerHTML = "";
     kindRow.appendChild(chip("すべて", selKind === "all", function(){ selKind = "all"; render(); }));
