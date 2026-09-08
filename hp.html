@@ -95,6 +95,11 @@
       <span class="flabel">市町</span>
       <div class="kinds cityset" id="cityRow2"></div>
     </div>
+    <div class="card flat roster" id="roster">
+      <p class="kicker">加盟団体一覧</p>
+      <div id="rosterBody"></div>
+    </div>
+
     <p class="count" id="count"></p>
     <div id="list"></div>
 
@@ -298,6 +303,7 @@
   function card(g, idx){
     var d = document.createElement("div");
     d.className = "group";
+    d.id = "g" + idx;
 
     var ph = document.createElement("div");
     ph.className = "photo";
@@ -370,8 +376,49 @@
     return d;
   }
 
+  function buildRoster(){
+    var box = document.getElementById("rosterBody");
+    if(!box) return;
+    box.innerHTML = "";
+    CITY_ORDER.forEach(function(city){
+      var idxs = [];
+      GROUPS.forEach(function(g, i){ if(g.city === city){ idxs.push(i); } });
+      if(idxs.length === 0) return;
+      var line = document.createElement("p");
+      line.className = "roster-line";
+      var c = document.createElement("span");
+      c.className = "roster-city";
+      c.textContent = city;
+      line.appendChild(c);
+      idxs.forEach(function(i, n){
+        if(n > 0){
+          var sep = document.createElement("span");
+          sep.className = "roster-sep";
+          sep.textContent = "／";
+          line.appendChild(sep);
+        }
+        var a = document.createElement("button");
+        a.type = "button";
+        a.className = "roster-name";
+        var sub = GROUPS[i].sub ? GROUPS[i].sub.replace(/（.*$/, "") : "";
+        a.textContent = GROUPS[i].name + (sub ? "（" + sub + "）" : "");
+        a.addEventListener("click", function(){
+          selCity = "all"; selKind = "all"; render();
+          var el = document.getElementById("g" + i);
+          if(!el) return;
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150, behavior: "smooth" });
+          el.classList.add("flash");
+          setTimeout(function(){ el.classList.remove("flash"); }, 1600);
+        });
+        line.appendChild(a);
+      });
+      box.appendChild(line);
+    });
+  }
+
   function render(){
     buildFilters();
+    buildRoster();
     var hit = GROUPS.filter(match);
     count.textContent = hit.length + "団体";
     list.innerHTML = "";
