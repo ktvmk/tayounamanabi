@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>子どもの多様な学びを育む会in三重</title>
 <meta name="description" content="三重県内のフリースクール・親の会・居場所がつながる会です。お住まいの市町から、子どもに合う学びの場をさがせます。">
-<link rel="stylesheet" href="assets/style.css?v=202609090014">
+<link rel="stylesheet" href="assets/style.css?v=202609091438">
 </head>
 <body>
 
@@ -192,7 +192,7 @@
   <div id="lbinfo"><div class="t"></div><div class="s"></div></div>
 </div>
 
-<script src="assets/groups.js?v=202609090014"></script>
+<script src="assets/groups.js?v=202609091438"></script>
 <script>
 (function(){
   /* ---------- 出現アニメーション ---------- */
@@ -342,7 +342,7 @@
     ph.appendChild(img);
     var kd = document.createElement("span");
     kd.className = "kindlabel";
-    kd.textContent = g.kind.join("・");
+    kd.textContent = (g.kind && g.kind.length) ? g.kind.join("・") : "種別 確認中";
     ph.appendChild(kd);
     if(g.photos.length > 1){
       var more = document.createElement("span");
@@ -433,7 +433,7 @@
         var a = document.createElement("button");
         a.type = "button";
         a.className = "roster-name";
-        var sub = GROUPS[i].sub ? GROUPS[i].sub.replace(/（.*$/, "") : "";
+        var sub = (GROUPS[i].sub && GROUPS[i].sub.indexOf("トーキョーコーヒー") === 0) ? GROUPS[i].sub.replace(/（.*$/, "") : "";
         a.textContent = GROUPS[i].name + (sub ? "（" + sub + "）" : "");
         a.addEventListener("click", function(){
           selCity = "all"; selKind = "all"; render();

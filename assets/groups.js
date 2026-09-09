@@ -54,6 +54,12 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph5.svg","assets/img/ph2.svg","assets/img/ph3.svg"] },
 
+  { name:"サードプレイス", kind:[], city:"四日市市", tags:[],
+    sub:"正式な団体名・種別は確認中",
+    intro:PLACEHOLDER_INTRO, sample:true,
+    age:"", days:"", fee:"", place:"", contact:"", url:"",
+    photos:["assets/img/ph2.svg","assets/img/ph4.svg","assets/img/ph6.svg"] },
+
   { name:"三重こどもの未来をつなぐ会", kind:["居場所"], city:"四日市市ほか", tags:["hoka"],
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
@@ -112,11 +118,6 @@ const GROUPS = [
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph3.svg","assets/img/ph5.svg","assets/img/ph2.svg"] },
-
-  { name:"WING学習塾", kind:["フリースクール"], city:"津市", tags:["gaku","sou"],
-    intro:PLACEHOLDER_INTRO, sample:true,
-    age:"", days:"", fee:"", place:"", contact:"", url:"",
-    photos:["assets/img/ph5.svg","assets/img/ph4.svg","assets/img/ph1.svg"] },
 
   { name:"チルドレンハウス ひびうた", kind:["居場所"], city:"津市", tags:["gaku","tai","hoka"],
     intro:PLACEHOLDER_INTRO, sample:true,
