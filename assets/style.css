@@ -68,7 +68,7 @@ a{color:var(--sky-deep);text-underline-offset:3px}
 
 /* ---------- 本体 ---------- */
 main{max-width:var(--maxw);margin:0 auto;padding:0 22px 70px}
-section{margin:70px 0;scroll-margin-top:130px}
+section{margin:70px 0;scroll-margin-top:8px}
 .narrow{max-width:var(--narrow);margin-left:auto;margin-right:auto}
 
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
