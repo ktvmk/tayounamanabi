@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>子どもの多様な学びを育む会in三重</title>
 <meta name="description" content="三重県内のフリースクール・親の会・居場所がつながる会です。お住まいの市町から、子どもに合う学びの場をさがせます。">
-<link rel="stylesheet" href="assets/style.css?v=202609091645">
+<link rel="stylesheet" href="assets/style.css?v=202610250005">
 </head>
 <body>
 
@@ -192,7 +192,7 @@
   <div id="lbinfo"><div class="t"></div><div class="s"></div></div>
 </div>
 
-<script src="assets/groups.js?v=202609091645"></script>
+<script src="assets/groups.js?v=202610250005"></script>
 <script>
 (function(){
   /* ---------- 出現アニメーション ---------- */
@@ -312,7 +312,16 @@
     dt.textContent = label;
     dl.appendChild(dt);
     var dd = document.createElement("dd");
-    if(value){
+    if(Array.isArray(value) && value.length){
+      /* サイト・SNSが複数あるとき：{label, href} を1行ずつ並べる */
+      value.forEach(function(v, i){
+        if(i > 0){ dd.appendChild(document.createElement("br")); }
+        var la = document.createElement("a");
+        la.href = v.href; la.target = "_blank"; la.rel = "noopener";
+        la.textContent = v.label || v.href.replace(/^https?:\/\//, "").replace(/\/$/, "");
+        dd.appendChild(la);
+      });
+    }else if(value && !Array.isArray(value)){
       if(isLink){
         var a = document.createElement("a");
         a.href = value; a.target = "_blank"; a.rel = "noopener";

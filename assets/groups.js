@@ -6,6 +6,7 @@
             asobi=親（子）を対象とした遊び・体験の場 / hoka=その他の活動
    sample … true のものは、ネット上に情報が見つからなかったためサンプル文を入れている（インタビューで差し替える）
    photos … 写真ファイル（assets/img/）。実写真が届いたら差し替える。1枚目が一覧に出る。
+   url    … 1つなら文字列。複数（サイト・SNS）なら [{label, href}, …] の配列で書く。
    ※ このファイルを直すだけで、一覧の表示がすべて変わる。 */
 
 const CITY_ORDER = [
@@ -54,6 +55,22 @@ const GROUPS = [
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph5.svg","assets/img/ph2.svg","assets/img/ph3.svg"] },
 
+  /* 2026-10-23 団体から届いた掲載内容（会アドレス経由）を反映 */
+  { name:"フリースクール「サードプレイス」", kind:["フリースクール"], city:"四日市市", tags:["gaku","sou"],
+    intro:"フリースクール「サードプレイス」は、学校でも家庭でもない第三の居場所として、2016年に四日市市で開設しました。完全個別学習支援や通信制高校の学びを支えるとともに、教員時代から子どもや保護者の声を聴いてきた経験をもとに、今年から相談事業も始めました。不登校、学習・進路、親子関係など、入会せずに相談だけでもご利用いただけます。学校復帰だけをゴールにせず、自分の物差しで学び、生きることをともに考えます。",
+    age:"小学生・中学生・高校生・高校中退生・浪人生", days:"木・日以外 10時〜17時",
+    fee:"入会費 10,000円／月額 14,000円〜25,000円", place:"四日市市蒔田3丁目3－21",
+    contact:"info@thirdplace-mie.com",
+    url:[
+      { label:"ホームページ", href:"https://thirdplace-mie.jimdofree.com/" },
+      { label:"Instagram", href:"https://www.instagram.com/miki_hamada_thirdplace/" },
+      { label:"YouTube", href:"https://www.youtube.com/channel/UCmAoNiEP_UlC8-RbwAj-Cgg" },
+      { label:"教育相談のご案内（LP）", href:"https://thirdplace-miki-lp.shiguibangtian.chatgpt.site" },
+      { label:"公式LINE", href:"https://lin.ee/hil4F7I" }
+    ],
+    note:"減免：三重県のフリースクール支援事業対象校",
+    photos:["assets/img/thirdplace_1.jpg","assets/img/thirdplace_2.jpg","assets/img/thirdplace_3.jpg","assets/img/thirdplace_4.jpg"] },
+
   { name:"三重こどもの未来をつなぐ会", kind:["居場所"], city:"四日市市ほか", tags:["hoka"],
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
@@ -76,6 +93,21 @@ const GROUPS = [
     intro:PLACEHOLDER_INTRO, sample:true,
     age:"", days:"", fee:"", place:"", contact:"", url:"",
     photos:["assets/img/ph5.svg","assets/img/ph1.svg","assets/img/ph3.svg"] },
+
+  /* 2026-10-20 団体から届いた掲載内容（会アドレス経由）を反映 */
+  { name:"子どもの学び舎ワンダーYOU", kind:["フリースクール"], city:"鈴鹿市", tags:["gaku","tai","asobi"],
+    sub:"運営：特定労働者協同組合コモンウェーブ",
+    intro:"代表自身の子どもの不登校をきっかけに始まったフリースクールです。朝の会から帰りの会まで、学習、ランチ、外遊び、自由時間、掃除と、仲間と一緒に一日を過ごします。おでかけや地域活動、ビーチクリーン、畑仕事などの体験も大切にしています。現在、通っているのは小学1〜6年生。元気でやさしく、仲間を思う気持ちの強い子どもたちです。「失敗を宝に」「誰もが主役」を合言葉に、一人ひとりのペースを大切にしています。",
+    age:"小学1年生〜6年生", days:"火曜〜金曜 10:00〜14:45（遠足・キャンプ・体験活動・外部講師による講座は随時）",
+    fee:"入会金 20,000円／年会費 12,000円（初年度無料）／月謝 33,000円／ランチ代 300円（1回）／課外活動費 実費／体験入会（1か月・最大5回） 2,000円＋ランチ代300円（1回）／一時利用 4,000円（1回）",
+    place:"鈴鹿市南若松（近鉄「千代崎駅」から徒歩7分）",
+    contact:"090-3764-5670／wonderyou000@gmail.com",
+    url:[
+      { label:"commonwavejapan.com/activity/free-school", href:"https://commonwavejapan.com/activity/free-school/" },
+      { label:"Instagram", href:"https://www.instagram.com/wonderyou_suzuka/" }
+    ],
+    note:"三重県「フリースクールで学ぶ子どもたちへの支援事業補助金」の対象施設です。県の認定を受けたご家庭には、月謝の半額分（上限15,000円）が県から返金されます。",
+    photos:["assets/img/wonderyou_1.jpg"] },
 
   { name:"僕らの夢庭スクールメイト", kind:["フリースクール"], city:"亀山市", tags:["gaku","tai","asobi"],
     intro:PLACEHOLDER_INTRO, sample:true,
